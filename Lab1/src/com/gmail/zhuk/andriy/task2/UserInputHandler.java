@@ -1,6 +1,7 @@
 package com.gmail.zhuk.andriy.task2;
 
 import java.io.*;
+import java.util.ArrayList;
 
 public class UserInputHandler {
 	private DividendFinder finder;
@@ -8,28 +9,40 @@ public class UserInputHandler {
 	public UserInputHandler(DividendFinder finder) {
 		this.finder = finder;
 	}
-	
-	String userInput;
-	InputStreamReader inputReader = new InputStreamReader(System.in);
-	BufferedReader reader = new BufferedReader(inputReader);
-	/*DividendFinder finder = new DividendFinder(3, 9);
-	try {
-		System.out.print("Enter quantity: ");
-		userInput = reader.readLine();
-		System.out.println("Enter numbers: ");
-		arraySize = Integer.parseInt(userInput);
-		array = new int[arraySize];
-		for(int i=0; i < arraySize; i++) {
+	public void handleInput() {
+		String userInput;
+		ArrayList<Integer> dividendList = new ArrayList<Integer>();
+		InputStreamReader inputReader = new InputStreamReader(System.in);
+		BufferedReader reader = new BufferedReader(inputReader);
+		try {
+			System.out.print("Enter quantity: ");
 			userInput = reader.readLine();
-			array[i] = Integer.parseInt(userInput);
+			System.out.println("Enter numbers: ");
+			int size = Integer.parseInt(userInput);
+			for(int i=0; i < size; i++) {
+				userInput = reader.readLine();
+				finder.getList().add(Integer.parseInt(userInput));
+			}
+			dividendList = finder.findDividends();
+			System.out.print("Dividents: ");
+			System.out.print(dividendList.toString());
+		} catch (Exception e) {
+			System.out.println("Input Error: " + e.getMessage());
 		}
-		System.out.print("Dividents: ");
-		for(int i = 0; i < arraySize; i++) {
-			if(finder.isDividend(array[i]))
-				System.out.print(array[i] + " ");
+	}
+	
+	public String toString() {
+		return getClass().getName() + "[finder=" + finder.toString() + "]";
+	}
+	
+	public boolean equals(Object object) {
+		if(object == this) {
+			return true;
 		}
-		System.out.println();
-	} catch (Exception e) {
-		System.out.println("Input Error: " + e.getMessage());
-	}*/
+		if(object != null && object instanceof UserInputHandler) {
+			UserInputHandler other = (UserInputHandler) object;
+			return finder.equals(other.finder);
+		}
+		return false;
+	}
 }

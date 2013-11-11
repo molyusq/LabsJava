@@ -1,31 +1,19 @@
 package com.gmail.zhuk.andriy.task2;
 
-import java.io.*;
-
 public class DividendFinderTest {
 	public static void main(String[] args) {
-		String userInput;
-		InputStreamReader inputReader = new InputStreamReader(System.in);
-		BufferedReader reader = new BufferedReader(inputReader);
-		/*DividendFinder finder = new DividendFinder(3, 9);
-		try {
-			System.out.print("Enter quantity: ");
-			userInput = reader.readLine();
-			System.out.println("Enter numbers: ");
-			arraySize = Integer.parseInt(userInput);
-			array = new int[arraySize];
-			for(int i=0; i < arraySize; i++) {
-				userInput = reader.readLine();
-				array[i] = Integer.parseInt(userInput);
-			}
-			System.out.print("Dividents: ");
-			for(int i = 0; i < arraySize; i++) {
-				if(finder.isDividend(array[i]))
-					System.out.print(array[i] + " ");
-			}
-			System.out.println();
-		} catch (Exception e) {
-			System.out.println("Input Error: " + e.getMessage());
-		}*/
+		DividendFinder finder = new DividendFinder(3, 9);
+		DividendFinder sameFinder = new DividendFinder(3, 9);
+		DividendFinder anotherFinder = new DividendFinder(3, 9);
+		UserInputHandler handler = new UserInputHandler(finder);
+		UserInputHandler sameHandler = new UserInputHandler(finder);
+		UserInputHandler anotherHandler = new UserInputHandler(anotherFinder);
+		handler.handleInput();
+		System.out.println(finder.toString());
+		System.out.println(handler.toString());
+		System.out.println(finder.equals(sameFinder));
+		System.out.println(finder.equals(anotherFinder));
+		System.out.println(handler.equals(sameHandler));
+		System.out.println(handler.equals(anotherHandler));
 	}
 }
