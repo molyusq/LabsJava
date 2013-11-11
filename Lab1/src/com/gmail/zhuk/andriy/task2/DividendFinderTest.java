@@ -4,11 +4,13 @@ public class DividendFinderTest {
 	public static void main(String[] args) {
 		DividendFinder finder = new DividendFinder(3, 9);
 		DividendFinder sameFinder = new DividendFinder(3, 9);
-		DividendFinder anotherFinder = new DividendFinder(3, 9);
+		DividendFinder anotherFinder = new DividendFinder(4, 5);
 		UserInputHandler handler = new UserInputHandler(finder);
-		UserInputHandler sameHandler = new UserInputHandler(finder);
+		UserInputHandler sameHandler = new UserInputHandler(sameFinder);
 		UserInputHandler anotherHandler = new UserInputHandler(anotherFinder);
 		handler.handleInput();
+		sameHandler.handleInput();
+		anotherHandler.handleInput();
 		System.out.println(finder.toString());
 		System.out.println(handler.toString());
 		System.out.println(finder.equals(sameFinder));

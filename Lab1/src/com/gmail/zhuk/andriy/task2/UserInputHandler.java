@@ -25,7 +25,7 @@ public class UserInputHandler {
 			}
 			dividendList = finder.findDividends();
 			System.out.print("Dividents: ");
-			System.out.print(dividendList.toString());
+			System.out.println(dividendList.toString());
 		} catch (Exception e) {
 			System.out.println("Input Error: " + e.getMessage());
 		}
