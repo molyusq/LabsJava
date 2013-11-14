@@ -21,7 +21,7 @@ public class UserInputHandler {
 			int size = Integer.parseInt(userInput);
 			for(int i=0; i < size; i++) {
 				userInput = reader.readLine();
-				finder.getList().add(Integer.parseInt(userInput));
+				finder.add(Integer.parseInt(userInput));
 			}
 			dividendList = finder.findDividends();
 			System.out.print("Dividents: ");

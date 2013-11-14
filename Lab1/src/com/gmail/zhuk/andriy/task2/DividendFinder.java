@@ -16,6 +16,9 @@ public class DividendFinder {
 	public boolean isDividend(int dividend) {
 		return dividend % this.firstDivider == 0 || dividend % this.secondDivider == 0;
 	}
+	public void add(Object object) {
+		inputList.add((Integer) object);
+	}
 	
 	public ArrayList<Integer> getList() {
 		return inputList;
@@ -41,7 +44,7 @@ public class DividendFinder {
 		}
 		if(object != null && object instanceof DividendFinder) {
 			DividendFinder other = (DividendFinder) object;
-			return getList().equals(other.getList()) && firstDivider == other.firstDivider && secondDivider == other.secondDivider;
+			return inputList.equals(other.inputList) && firstDivider == other.firstDivider && secondDivider == other.secondDivider;
 		}
 		return false;
 	}
