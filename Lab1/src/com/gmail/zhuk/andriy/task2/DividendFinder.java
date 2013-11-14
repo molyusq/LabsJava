@@ -20,10 +20,6 @@ public class DividendFinder {
 		inputList.add((Integer) object);
 	}
 	
-	public ArrayList<Integer> getList() {
-		return inputList;
-	}
-	
 	public ArrayList<Integer> findDividends() {
 		ArrayList<Integer> dividendList = new ArrayList<Integer>();
 		for(int i = 0; i < inputList.size(); i++) {
