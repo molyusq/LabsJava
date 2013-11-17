@@ -90,6 +90,7 @@ public class Vector {
     	
     	Vector vector = (Vector) obj;
     	
+    	if (vector.arr == arr) return true;
     	if (vector.getSize() != getSize()) return false;
     	
     	for (int i = 0; i < getSize(); i++)
@@ -100,12 +101,12 @@ public class Vector {
     
     @Override
     public String toString() {
-    	String str = "";
+    	String str = "[ ";
     	
     	for (int i = 0; i < getSize(); i++) {
 			str = str + getElem(i) + " ";
 		}
     	
-    	return str;
+    	return str + " ]";
     }
 }
