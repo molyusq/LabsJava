@@ -3,6 +3,7 @@ package com.gmail.zhuk.andriy.task2;
 import java.util.ArrayList;
 
 public class DividendFinder {
+	
 	private ArrayList<Integer> inputList;
 	private int firstDivider;
 	private int secondDivider;
@@ -13,11 +14,11 @@ public class DividendFinder {
 		this.secondDivider = secondDivider;
 	}
 	
-	public boolean isDividend(int dividend) {
+	private boolean isDividend(int dividend) {
 		return dividend % this.firstDivider == 0 || dividend % this.secondDivider == 0;
 	}
-	public void add(Object object) {
-		inputList.add((Integer) object);
+	public void add(int object) {
+		inputList.add(object);
 	}
 	
 	public ArrayList<Integer> findDividends() {

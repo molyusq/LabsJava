@@ -4,6 +4,7 @@ import java.io.*;
 import java.util.ArrayList;
 
 public class UserInputHandler {
+	
 	private DividendFinder finder;
 	
 	public UserInputHandler(DividendFinder finder) {

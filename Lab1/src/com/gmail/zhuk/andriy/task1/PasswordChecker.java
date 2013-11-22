@@ -4,7 +4,7 @@ public class PasswordChecker {
 	private String password;
 	
 	public PasswordChecker() {
-		this.password = "null";
+		password = "null";
 	}
 	
 	public PasswordChecker(String password) {
