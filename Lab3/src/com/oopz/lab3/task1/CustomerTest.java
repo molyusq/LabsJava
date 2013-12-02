@@ -2,7 +2,7 @@ package com.oopz.lab3.task1;
 
 import com.oopz.lab3.utils.AbstractTest;
 
-public class CustomerTest extends AbstractTest {
+public class CustomerTest implements AbstractTest {
 	
 	private int cardIdFrom = 2;
 	private int cardIdTo = 3;
