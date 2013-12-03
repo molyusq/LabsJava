@@ -2,7 +2,7 @@ package com.oopz.lab3.task2;
 
 import com.oopz.lab3.utils.AbstractTest;
 
-public class VectorTest extends AbstractTest {
+public class VectorTest implements AbstractTest {
 
 	@Override
 	public void startTest() {
