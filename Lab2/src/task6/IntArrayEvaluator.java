@@ -1,37 +1,36 @@
 package task6;
 
-public class IntArrayProcessor {
-	
+public class IntArrayEvaluator {
+
 	private int[] array;
-	
-	public IntArrayProcessor(int[] array){
+
+	public IntArrayEvaluator(int[] array) {
 		this.array = array.clone();
 	}
-	
-	public int getOddNumbersSummary(){
+
+	public int getOddNumbersSummary() {
 		int sum = 0;
-		for( int num : array){
-			if(num%2==1){
+		for (int num : array) {
+			if (num % 2 == 1) {
 				sum += num;
 			}
 		}
 		return sum;
 	}
-	
+
 	public String toString() {
 		return getClass().getName() + "[array =" + array.toString() + "]";
 	}
-	
+
 	public boolean equals(Object object) {
-		if(object == this) {
+		if (object == this) {
 			return true;
 		}
-		if(object != null && object instanceof IntArrayProcessor) {
-			IntArrayProcessor other = (IntArrayProcessor) object;
+		if (object != null && object instanceof IntArrayEvaluator) {
+			IntArrayEvaluator other = (IntArrayEvaluator) object;
 			return array.equals(other.array);
 		}
 		return false;
 	}
-	
-	
+
 }
