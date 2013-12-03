@@ -40,7 +40,7 @@ public class StringsModel {
 		for( int i =0; i< strings.length; i++){
 			sStrings += ((i!=0)?",":"")+"\""+strings[i]+"\"";
 		}
-		return this.getClass().getName()+"["+sStrings+"]";		
+		return this.getClass().getName()+"["+sStrings+"]";			
 	}
 	
 	public boolean equals(Object ob){		
@@ -56,16 +56,6 @@ public class StringsModel {
 				return false;
 		}
 		return true;
-	}
-	
-	/* shallow copy */
-	public StringsModel copy(){
-		return new StringsModel(strings);
-	}
-	
-	/* deep copy */
-	public Object clone() throws CloneNotSupportedException{
-		return new StringsModel(strings.clone());
 	}
 		
 }
