@@ -1,5 +1,7 @@
 package task7;
 
+import task6.IntArrayEvaluator;
+
 public class Triangle {
 
 	private double[] sides = new double[3];
@@ -33,5 +35,24 @@ public class Triangle {
 			}
 		}
 		return 1;
+	}
+	
+	public String toString() {
+		String sSides = "";
+		for(double side : sides){
+			sSides += side+", ";
+		}
+		return getClass().getName() + "[sides="+sSides+"]";
+	}
+
+	public boolean equals(Object object) {
+		if (object == this) {
+			return true;
+		}
+		if (object != null && object instanceof Triangle) {
+			Triangle other = (Triangle) object;
+			return sides.equals(other.sides);
+		}
+		return false;
 	}
 }
