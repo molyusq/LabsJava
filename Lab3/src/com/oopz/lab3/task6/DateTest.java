@@ -2,12 +2,9 @@ package com.oopz.lab3.task6;
 
 import java.util.Calendar;
 
-import com.oopz.lab3.utils.AbstractTest;
+public class DateTest {
 
-public class DateTest implements AbstractTest {
-
-	@Override
-	public void startTest() {
+	public static void main(String[] args) {
 		Calendar calendar = Calendar.getInstance();
 		
 		ExtendedDate date = new ExtendedDate(calendar);

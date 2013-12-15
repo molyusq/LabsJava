@@ -1,33 +1,43 @@
 package com.oopz.lab3.task2;
 
 public class Vector {
-	private double[] arr;
+	private float[] arr;
 	
     public Vector() {
         arr = null;
     }
 
     public Vector(int n) {
-        arr = new double[n];
+        arr = new float[n];
     }
 
-    public Vector(double[] a) {
+    public Vector(float[] a) {
     	this(a.length);
     	
         for (int i = 0; i < a.length; i++) {
         	arr[i] = a[i];
         }
     }
+    
+    public Vector(String vectorStr) {
+    	String[] numbers = vectorStr.split(" ");
+    	
+    	arr = new float[numbers.length];
+    	
+    	for (int i = 0; i < numbers.length; i++) {
+    		arr[i] = Float.parseFloat(numbers[i]);
+    	}
+    }
 
     public Vector(Vector a) {
     	this(a.arr);
     }
     
-    public double getElem(int index) {
+    public float getElem(int index) {
     	return arr[index];
     }
     
-    public void setElem(int index, double value) {
+    public void setElem(int index, float value) {
     	arr[index] = value;
     }
     
@@ -51,7 +61,7 @@ public class Vector {
         return this;
     }
     
-    public Vector mul(double val) {
+    public Vector mul(float val) {
 
         for (int i = 0; i < getSize(); i++) {
             this.setElem(i, getElem(i) * val);
@@ -60,18 +70,18 @@ public class Vector {
         return this;
     }
     
-    public double getModule() {
-    	double result = 0;
+    public float getModule() {
+    	float result = 0;
     	
     	for (int i = 0; i < getSize(); i++)
 			result += (getElem(i) * getElem(i));
     	
-    	return Math.sqrt(result);
+    	return (float)Math.sqrt(result);
     }
     
-    public double scalar(Vector vector) {
+    public float scalar(Vector vector) {
     	
-    	double result = 0;
+    	float result = 0;
     	
     	for (int i = 0; i < getSize(); i++)
             result += getElem(i) * vector.getElem(i);

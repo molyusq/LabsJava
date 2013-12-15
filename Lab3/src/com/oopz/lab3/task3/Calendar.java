@@ -15,9 +15,9 @@ public class Calendar {
 	public int init(int startDayOfWeek, int numberOfDaysInMonth) {
 		dates = new Date[numberOfDaysInMonth];
 		
-		for (int i = 0; i < numberOfDaysInMonth; i++) {
+		for (int i = 0; i < numberOfDaysInMonth; i++)
 			dates[i] = new Date(i, (startDayOfWeek > 6) ? startDayOfWeek = 0 : startDayOfWeek++);
-		}
+		
 		
 		return startDayOfWeek;
 	}

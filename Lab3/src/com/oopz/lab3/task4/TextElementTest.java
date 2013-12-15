@@ -3,22 +3,20 @@ package com.oopz.lab3.task4;
 import java.util.ArrayList;
 import java.util.Iterator;
 
-import com.oopz.lab3.utils.AbstractTest;
 
-public class TextElementTest implements AbstractTest {
+public class TextElementTest {
 	
-	TextElementVisitor printer = new TextElementPrinter(8);
-	TextElementVisitor uppercaseConverter = new TextElementUpperCaseConverter();
-	TextElementVisitor lowercaseConverter = new TextElementLowerCaseConverter();
+	private static TextElementVisitor printer = new TextElementPrinter(8);
+	private static TextElementVisitor uppercaseConverter = new TextElementUpperCaseConverter();
+	private static TextElementVisitor lowercaseConverter = new TextElementLowerCaseConverter();
 	
-	public void print(Iterator<TextElement> iterator) {
+	public static void print(Iterator<TextElement> iterator) {
 		while (iterator.hasNext()) {
 			iterator.next().accept(printer);
 		}
 	}
 	
-	@Override
-	public void startTest() {
+	public static void main(java.lang.String[] args) {
 		ArrayList<TextElement> textElements = new ArrayList<TextElement>();
 		
 		String string1 = new String("Hello!");

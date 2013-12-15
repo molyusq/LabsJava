@@ -19,6 +19,9 @@ public class VectorChecker {
 	}
 	
 	public boolean areCollinear() {
+		System.out.println(vector1.scalar(vector2));
+		System.out.println(Math.abs(vector1.getModule() * vector2.getModule()));
+		
 		return 	Math.abs(vector1.scalar(vector2)) == Math.abs(vector1.getModule() * vector2.getModule());
 	}
 	

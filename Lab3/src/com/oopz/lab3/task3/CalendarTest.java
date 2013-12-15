@@ -1,15 +1,11 @@
 package com.oopz.lab3.task3;
 
-import com.oopz.lab3.utils.AbstractTest;
-
-public class CalendarTest implements AbstractTest {
+public class CalendarTest {
 	
-	private int dayInMonth = 17;
-	private int dayInweek = 3;
+	private static int dayInMonth = 17;
+	private static int dayInweek = 3;
 	
-	
-	@Override
-	public void startTest() {
+	public static void main(String[] args) {
 		
 		Calendar[] yearCalendar = new Calendar[12];
 		

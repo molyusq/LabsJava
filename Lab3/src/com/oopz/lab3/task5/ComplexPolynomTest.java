@@ -1,11 +1,8 @@
 package com.oopz.lab3.task5;
 
-import com.oopz.lab3.utils.AbstractTest;
+public class ComplexPolynomTest {
 
-public class ComplexPolynomTest implements AbstractTest {
-
-	@Override
-	public void startTest() {
+	public static void main(String[] args) {
 		Complex c1 = new Complex(1, 1);
 		Complex c2 = new Complex(2, 1);
 		Complex c3 = new Complex(2, 2);

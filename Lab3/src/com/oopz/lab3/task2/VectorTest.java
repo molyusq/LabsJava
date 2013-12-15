@@ -1,13 +1,9 @@
 package com.oopz.lab3.task2;
 
-import com.oopz.lab3.utils.AbstractTest;
-
-public class VectorTest implements AbstractTest {
-
-	@Override
-	public void startTest() {
-		Vector v1 = new Vector(new double[] {5, 0, 3});
-		Vector v2 = new Vector(new double[] {0, 5, 3});
+public class VectorTest {
+	public static void main(String[] args) {
+		Vector v1 = new Vector(new float[] {5, 0, 0});
+		Vector v2 = new Vector(new float[] {0, 5, 0});
 		
 		VectorChecker checker = new VectorChecker(v1, v2);
 		

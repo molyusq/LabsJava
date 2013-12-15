@@ -14,6 +14,7 @@ public class Student {
 		averageMark = -1;
 	}
 	
+	
 	public Student(String university, String name, String surname, int averageMark) {
 		this.university = university;
 		this.name = name;
