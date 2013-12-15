@@ -39,7 +39,6 @@ public class WordsCounterMap {
 			try {
 				incWord(word2);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}

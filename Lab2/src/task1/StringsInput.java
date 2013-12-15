@@ -4,20 +4,18 @@ import java.util.Scanner;
 
 public class StringsInput {
 
-	/* Singleton Pattern */
 	private static StringsInput instance;
-
-	public static StringsInput getInstance() {
-		if (instance == null)
-			instance = new StringsInput();
-		return instance;
-	}
-
 	private Scanner scanner;
 	private String wrongInputMessage;
 
 	private StringsInput() {
 		scanner = new Scanner(System.in);
+	}
+	
+	public static StringsInput getInstance() {
+		if (instance == null)
+			instance = new StringsInput();
+		return instance;
 	}
 
 	public void printMessage(String message) {
