@@ -3,14 +3,18 @@ package com.oopz.rgr.model;
 public class Client {
 	private String fName;
 	private String lName;
+	private String login;
+	private String password;
 	private int age;
 	private Account account;
 	private CreditCard card;
 	
-	public Client(String fName, String lName, int age) {
+	public Client(String fName, String lName, int age, String login, String password) {
 		this.fName = fName;
 		this.lName = lName;
 		this.age = age;
+		this.login = login;
+		this.password = password;
 	}
 	
 	public void setFirstName(String fName) {
@@ -34,28 +38,20 @@ public class Client {
 		return age;
 	}
 	
-	public boolean sendToAnotherAccount(int amount, Account another) {
-		if(account.getAmount() > amount) {
-			another.setAmount(another.getAmount() + amount);
-			return true;
-		}
-		else return false;
+	public String getLogin() {
+		return login;
+	}
+	public void setLogin(String login) {
+		if(!this.login.equals(login))
+			this.login = login;
 	}
 	
-	public boolean blockCard() {
-		if(card.getStatus()) {
-			card.changeStatus();
-			return true;
-		}
-		return false;
+	public String getPassword() {
+		return password;
 	}
-	
-	public boolean nullifyAccount() {
-		if(account.getAmount() > 0) {
-			account.setAmount(0);
-			return true;
-		}
-		return false;
+	public void setPassword(String password) {
+		if(!this.password.equals(password))
+			this.password= password;
 	}
 	
 	public int hashcode() {
@@ -64,7 +60,7 @@ public class Client {
 	}
 	
 	public String toString() {
-		return getClass().getName() + "[fName=" + fName + ", lName=" + lName + ", age=" + age + ", account=" + account + ", card=" + card.toString();
+		return getClass().getName() + "[fName=" + fName + ", lName=" + lName + ", age=" + age + ", account=" + account + ", card=" + card.toString() + "]";
 	}
 	
 	public boolean equals(Object object) {
@@ -72,7 +68,7 @@ public class Client {
 			return true;
 		if(object != null || object instanceof Client) {
 			Client another = (Client) object;
-			return fName.equals(another) && lName.equals(another) && age == another.age && account.equals(another.account) && card.equals(another.card);
+			return fName.equals(another.fName) && lName.equals(another.lName) && hashCode() == another.hashCode() && account.equals(another.account) && card.equals(another.card) && login.equals(another.login) && password.equals(another.password);
 		}
 		return false;
 	}

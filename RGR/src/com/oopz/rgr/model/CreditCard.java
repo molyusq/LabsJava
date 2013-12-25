@@ -4,7 +4,13 @@ public class CreditCard {
 	private double credit;
 	private boolean status = false;
 	
+	public CreditCard(double credit) {
+		this.credit = credit;
+	}
+	
 	public void setCredit(double credit) {
+		if(credit < 0)
+			return;
 		this.credit = credit;
 	}
 	public double getCredit() {
@@ -18,5 +24,23 @@ public class CreditCard {
 		if(status)
 			status = false;
 		else status = true;
+	}
+	
+	public int hashCode() {
+		return (int)(11*Math.floor(credit));
+	}
+	
+	public String toString() {
+		return getClass().getName() + "[credit=" + credit + ", status=" + status + "]";
+	}
+	
+	public boolean equals(Object object) {
+		if(object == this)
+			return true;
+		if(object != null || object instanceof CreditCard) {
+			CreditCard another = (CreditCard) object;
+			return credit == another.credit && status == another.status;
+		}
+		return false;
 	}
 }
