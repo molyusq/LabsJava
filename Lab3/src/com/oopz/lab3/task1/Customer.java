@@ -10,13 +10,15 @@ public class Customer {
 	private long accoundId;
 	
 	public Customer() {
-		id = -1;
-		surname = "";
-		name = "";
-		middlename = "";
-		address = "";
-		cardId = -1;
-		accoundId = -1;
+		super();
+//		this(-1, "", "", "", "", -1, -1);
+//		id = -1;
+//		surname = "";
+//		name = "";
+//		middlename = "";
+//		address = "";
+//		cardId = -1;
+//		accoundId = -1;
 	}
 	
 	public Customer(int id, String surname, String name, String middlename, String address, long cardId, long accountId) {

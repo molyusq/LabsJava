@@ -80,6 +80,8 @@ public class Vector {
     }
     
     public float scalar(Vector vector) {
+    	if (this.getSize() != vector.getSize())
+            throw new RuntimeException("Cannot get scalar: sizes are not equal");
     	
     	float result = 0;
     	
