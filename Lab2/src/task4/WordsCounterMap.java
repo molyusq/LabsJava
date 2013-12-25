@@ -2,21 +2,16 @@ package task4;
 
 import java.util.HashMap;
 import java.util.Iterator;
-import java.util.Map;
 
 public class WordsCounterMap {
 
-	private HashMap words = new HashMap();
-
-	public WordsCounterMap() {
-
-	}
+	private HashMap<String, Integer> words = new HashMap<String, Integer>();
 
 	public void clearResults() {
 		words.clear();
 	}
 
-	public void incWord(String word) throws Exception {
+	public void incWord(String word) {
 		if (!words.containsKey(word)) {
 			words.put(word, 1);
 		} else {
@@ -24,9 +19,9 @@ public class WordsCounterMap {
 		}
 	}
 
-	public int getWordCount(String word) throws Exception {
+	public int getWordCount(String word){
 		if (!words.containsKey(word)) {
-			throw new Exception("no such word in counter: " + word);
+			throw new RuntimeException("no such word in counter: " + word);
 		} else {
 			return (Integer) words.get(word);
 		}
@@ -47,7 +42,7 @@ public class WordsCounterMap {
 	@Override
 	public String toString() {
 		String sWords = "";
-		Iterator it = words.keySet().iterator();
+		Iterator<String> it = words.keySet().iterator();
 		while (it.hasNext()) {
 			String word = (String) it.next();
 			sWords += "\"" + word + "\":" + words.get(word) + ",";

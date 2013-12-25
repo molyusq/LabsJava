@@ -1,17 +1,15 @@
 package task7;
 
-import task6.IntArrayEvaluator;
-
 public class Triangle {
 
 	private double[] sides = new double[3];
 
-	public Triangle(double a, double b, double c) throws Exception {
+	public Triangle(double a, double b, double c){
 		if (a <= 0 || b <= 0 || c <= 0) {
-			throw new Exception("Triangle sides should be positive numbers");
+			throw new RuntimeException("Triangle sides should be positive numbers");
 		}
 		if (a + b <= c || b + c <= a || a + c <= b) {
-			throw new Exception("The triangle cannot be constructed");
+			throw new RuntimeException("The triangle cannot be constructed");
 		}
 		sides[0] = a;
 		sides[1] = b;

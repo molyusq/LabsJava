@@ -3,6 +3,9 @@ package task1;
 public class StudentsTest {
 
 	public static void main(String[] args) {
+		GUIHandler handler = new GUIHandler(400, 300, "Lab4 Task1");
+		handler.initGUI();
+		/*
 		StudentOfFaculty student = new StudentOfFaculty("Alexey", "Chernega", 21, 5, "FAM");
 		student.showInfo();
 		student.passExam();
@@ -11,8 +14,7 @@ public class StudentsTest {
 		System.out.println(student.toString());
 		System.out.println(student.equals(sameStudent));
 		System.out.println(student.equals(anotherStudent));
-		
-		
+		*/		
 	}
 
 }

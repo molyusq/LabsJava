@@ -1,5 +1,9 @@
 package task1;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 public class StudentOfFaculty extends Student {
 	
 	private String facultyName;
@@ -23,6 +27,17 @@ public class StudentOfFaculty extends Student {
 	
 	public String getFacultyName() {
 		return facultyName;
+	}
+	
+	public void setFacultyName(String facultyName) {
+		this.facultyName = facultyName;
+	}
+	
+	@Override
+	public Object[] getObjectData(){
+		List<Object> list = new ArrayList<Object>(Arrays.asList(super.getObjectData()));
+	    list.addAll(Arrays.asList(new Object[]{ facultyName}));
+		return list.toArray();
 	}
 	
 	public boolean equals(Object object) {

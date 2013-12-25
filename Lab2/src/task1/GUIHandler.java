@@ -1,11 +1,9 @@
 package task1;
 
 import java.awt.FlowLayout;
-import java.awt.GridLayout;
 import java.awt.event.*;
 import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 
 import javax.swing.*;
 

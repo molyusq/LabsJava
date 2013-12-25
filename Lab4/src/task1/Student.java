@@ -27,6 +27,23 @@ public abstract class Student implements Abiturient {
 		return course;
 	}
 	
+	public void setName(String name) {
+		this.name = name;
+	}
+	public void setSurname(String surname) {
+		this.surname = surname;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public void setCourse(int course) {
+		this.course = course;
+	}
+	
+	public Object[] getObjectData(){
+		return new Object[]{ name, surname, age, course};
+	}
+	
 	public boolean equals(Object object) {
 		if(object == this)
 			return true;
