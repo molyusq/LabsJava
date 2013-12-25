@@ -1,7 +1,9 @@
 package task1;
 
 public class StringsModel {
+	
 	private String[] strings;
+	
 
 	public StringsModel(int n) {
 		strings = new String[n];
@@ -11,12 +13,11 @@ public class StringsModel {
 		this.strings = strings;
 	}
 
-	public void addString(int pos, String string)
-			throws IndexOutOfBoundsException {
+	public void addString(int pos, String string){
 		strings[pos] = string;
 	}
 
-	public String getString(int pos) throws IndexOutOfBoundsException {
+	public String getString(int pos){
 		return strings[pos];
 	}
 
@@ -34,6 +35,10 @@ public class StringsModel {
 			}
 		}
 		return strings[pos];
+	}
+	
+	public int getLongestLength(){
+		return getMaxLengthString().length();
 	}
 
 	public String toString() {

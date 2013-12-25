@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class DoubleArrayEvaluator {
+	
 	private double[] array;
 
 	public DoubleArrayEvaluator() {
