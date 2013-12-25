@@ -26,6 +26,9 @@ public class LoginFrame extends JFrame {
 	
 	
 	public LoginFrame() {
+		
+		setTitle("Login");
+		
 		loginTextField = new JTextField(10);
 		passwordTextField = new JTextField(10);
 		

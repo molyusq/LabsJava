@@ -43,6 +43,9 @@ public class ClientFrame extends JFrame {
 	
 	
 	public ClientFrame() {
+		
+		setTitle("Client");
+		
 		topPanel = new JPanel();
 		topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.LINE_AXIS));
 		
@@ -65,11 +68,11 @@ public class ClientFrame extends JFrame {
 		actionsPanel = new JPanel();
 		actionsPanel.setLayout(new BoxLayout(actionsPanel, BoxLayout.PAGE_AXIS));
 		
-		orderText = new JTextField(15);
+		orderText = new JTextField("Order ID", 15);
 		payOrderButton = new JButton("Pay Order");
 		
-		toAccountText = new JTextField(15);
-		amountText = new JTextField(5);
+		toAccountText = new JTextField("Account ID", 15);
+		amountText = new JTextField("Money Amount", 5);
 		sendButton = new JButton("Send");
 		
 		JPanel actionsInnerPanel = new JPanel();
