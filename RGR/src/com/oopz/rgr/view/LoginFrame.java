@@ -37,19 +37,26 @@ public class LoginFrame extends JFrame {
 		
 		topPanel.setLayout(new BoxLayout(topPanel, BoxLayout.PAGE_AXIS));
 		
-		JPanel loginPanel = new JPanel();
-		loginPanel.setLayout(new BoxLayout(loginPanel, BoxLayout.LINE_AXIS));
-		loginPanel.add(loginLabel);
-		loginPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-		loginPanel.add(loginTextField);
-		loginPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
+		JPanel labelTextPanel = new JPanel();
+		labelTextPanel.setLayout(new BoxLayout(labelTextPanel, BoxLayout.LINE_AXIS));
 		
-		JPanel passwordPanel = new JPanel();
-		passwordPanel.setLayout(new BoxLayout(passwordPanel, BoxLayout.LINE_AXIS));
-		passwordPanel.add(passwordLabel);
-		passwordPanel.add(Box.createRigidArea(new Dimension(10, 0)));
-		passwordPanel.add(passwordTextField);
-		passwordPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
+		JPanel labelPanel = new JPanel();
+		labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.PAGE_AXIS));
+		labelPanel.add(loginLabel);
+		labelPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+		labelPanel.add(passwordLabel);
+		labelPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
+		
+		JPanel textPanel = new JPanel();
+		textPanel.setLayout(new BoxLayout(textPanel, BoxLayout.PAGE_AXIS));
+		textPanel.add(loginTextField);
+		textPanel.add(Box.createRigidArea(new Dimension(0, 10)));
+		textPanel.add(passwordTextField);
+		textPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
+		
+		labelTextPanel.add(labelPanel);
+		labelTextPanel.add(textPanel);
+		
 		
 		JPanel buttonPanel = new JPanel();
 		buttonPanel.setLayout(new BoxLayout(buttonPanel, BoxLayout.LINE_AXIS));
@@ -60,8 +67,7 @@ public class LoginFrame extends JFrame {
 		buttonPanel.setBorder(BorderFactory.createEmptyBorder(10, 0, 10, 10));
 
 
-		topPanel.add(loginPanel);
-		topPanel.add(passwordPanel);
+		topPanel.add(labelTextPanel);
 		topPanel.add(buttonPanel);
 		
 		add(topPanel);
