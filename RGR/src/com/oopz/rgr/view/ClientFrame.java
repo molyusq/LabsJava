@@ -1,7 +1,9 @@
 package com.oopz.rgr.view;
 
 import java.awt.Dimension;
+import java.awt.Font;
 
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.GroupLayout;
@@ -74,7 +76,8 @@ public class ClientFrame extends JFrame {
 		GroupLayout layout = new GroupLayout(actionsInnerPanel);
 		actionsInnerPanel.setLayout(layout);
 		
-		
+		layout.setAutoCreateContainerGaps(true);
+		layout.setAutoCreateGaps(true);
 		layout.setHorizontalGroup(layout.createSequentialGroup().addGroup(
 											layout.createParallelGroup().
 													addComponent(orderText).
@@ -102,15 +105,20 @@ public class ClientFrame extends JFrame {
 		logoutButton = new JButton("Logout");
 		
 		buttonInnerPanel.add(blockCardButton);
+		buttonInnerPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 		buttonInnerPanel.add(annAccountButton);
+		buttonInnerPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 		buttonInnerPanel.add(logoutButton);
+		buttonInnerPanel.setBorder(BorderFactory.createEmptyBorder(0, 10, 10, 10));
 		
 		actionsPanel.add(actionsInnerPanel);
 		actionsPanel.add(buttonInnerPanel);
 	}
 	
 	private void initInfoPanel() {
+		
 		clientInfoLabel = new JLabel("Client info");
+		clientInfoLabel.setFont(new Font(clientInfoLabel.getName(), Font.PLAIN, 16));
 		
 		nameLabel = new JLabel("Name :");
 		surnameLabel = new JLabel("Surname :");
@@ -129,26 +137,34 @@ public class ClientFrame extends JFrame {
 		labelPanel.setLayout(new BoxLayout(labelPanel, BoxLayout.PAGE_AXIS));
 		
 		labelPanel.add(nameLabel);
+		labelPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		labelPanel.add(surnameLabel);
+		labelPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		labelPanel.add(accountLabel);
+		labelPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		labelPanel.add(creditCardLabel);
-		
 		
 		JPanel contentPanel = new JPanel();
 		contentPanel.setLayout(new BoxLayout(contentPanel, BoxLayout.PAGE_AXIS));
 		
 		contentPanel.add(nameContentLabel);
+		contentPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		contentPanel.add(surnameContentLabel);
+		contentPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		contentPanel.add(accountContentLabel);
+		contentPanel.add(Box.createRigidArea(new Dimension(0, 10)));
 		contentPanel.add(creditCardContentLabel);
 		
 		JPanel labelContentPanel = new JPanel();
 		labelContentPanel.setLayout(new BoxLayout(labelContentPanel, BoxLayout.LINE_AXIS));
 		
 		labelContentPanel.add(labelPanel);
+		labelContentPanel.add(Box.createRigidArea(new Dimension(10, 0)));
 		labelContentPanel.add(contentPanel);
+		labelContentPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 0, 10));
 		
 		clientInfoPanel.add(clientInfoLabel);
+		clientInfoPanel.add(Box.createRigidArea(new Dimension(0, 5)));
 		clientInfoPanel.add(labelContentPanel);
 	}
 }
