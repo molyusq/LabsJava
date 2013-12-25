@@ -40,6 +40,7 @@ public abstract class Student implements Abiturient {
 		this.course = course;
 	}
 	
+	@Override
 	public Object[] getObjectData(){
 		return new Object[]{ name, surname, age, course};
 	}
