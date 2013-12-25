@@ -1,40 +1,21 @@
 package com.oopz.rgr.model;
 
-public class Admin {
-	private String login;
-	private String password;
-	
+public class Admin extends User {
+
 	public Admin(String login, String password) {
-		this.login = login;
-		this.password = password;
+		super(login, password);
 	}
-	
-	public String getLogin() {
-		return login;
-	}
-	public void setLogin(String login) {
-		if(!this.login.equals(login))
-			this.login = login;
-	}
-	
-	public String getPassword() {
-		return password;
-	}
-	public void setPassword(String password) {
-		if(!this.password.equals(password))
-			this.password= password;
-	}
-	
+
 	public String toString() {
-		return getClass().getName() + "[login=" + login + ", password=" + password + "]";
+		return getClass().getName() + " " + super.toString();
 	}
-	
+
 	public boolean equals(Object object) {
-		if(object == this)
+		if (object == this)
 			return true;
-		if(object != null || object instanceof Admin) {
+		if (object != null || object instanceof Admin) {
 			Admin another = (Admin) object;
-			return login.equals(another.login) && password.equals(another.password);
+			return super.equals((User) another);
 		}
 		return false;
 	}
