@@ -1,3 +1,4 @@
+package com.oopz.rgr.model;
 
 public class Account {
 	private double amount;
