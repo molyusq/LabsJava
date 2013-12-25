@@ -13,7 +13,6 @@ import javax.swing.JTextField;
 
 public class GuiHandler extends JFrame {
 
-	private static final long serialVersionUID = 1L;
 	private JPanel panel = new JPanel();
 	private JTextField vectorInput1;
 	private JTextField vectorInput2;
@@ -63,7 +62,7 @@ public class GuiHandler extends JFrame {
 					collinearLabel.setText("Vectors are " + (checker.areCollinear() ? "" : "not ") + "collinear");
 					orthogonalLabel.setText("Vectors are " + (checker.areOrthogonal() ? "" : "not ") + "orthogonal");
 					
-				} catch (NumberFormatException e) {
+				} catch (Exception e) {
 					JOptionPane.showMessageDialog(panel, e.getMessage(), "Error",
 							getDefaultCloseOperation());
 				}

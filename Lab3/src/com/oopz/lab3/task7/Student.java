@@ -1,5 +1,7 @@
 package com.oopz.lab3.task7;
 
+import com.oopz.lab3.task1.Customer;
+
 public class Student { 
 
 	private String university;
@@ -22,11 +24,17 @@ public class Student {
 		this.averageMark = averageMark;
 	}
 	
+	public void setInt(int averageMark) {
+		this.averageMark = averageMark; 
+	}
+	
 	public String getUniversity() {
 		return university;
 	}
 	
-	public void setUniversity(String university) {
+	public void setStrings(String surname, String name, String university) {
+		this.name = name;
+		this.surname = surname;
 		this.university = university;
 	}
 	
@@ -34,23 +42,24 @@ public class Student {
 		return name;
 	}
 	
-	public void setName(String name) {
-		this.name = name;
-	}
-	
 	public String getSurname() {
 		return surname;
-	}
-	
-	public void setSurname(String surname) {
-		this.surname = surname;
 	}
 	
 	public int getAverageMark() {
 		return averageMark;
 	}
 	
-	public void setAverageMark(int averageMark) {
-		this.averageMark = averageMark;
+	@Override
+	public boolean equals(Object obj) {
+		if (obj == this) return true;
+		if (obj == null || (obj.getClass() != this.getClass())) return false;
+		
+		Student student = (Student) obj;
+		
+		return university.equals(student.university) &&
+				surname.equals(student.surname) &&
+				name.equals(student.name) &&
+				averageMark == student.averageMark;
 	}
 }

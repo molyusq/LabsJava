@@ -20,15 +20,13 @@ public class GroupMate extends Student {
 		return telephoneNumber;
 	}
 	
-	public void setTelephoneNumber(String telephoneNumber) {
+	public void setStrings(String surname, String name, String university, String telephoneNumber, String adress) {
+		super.setStrings(surname, name, university);
 		this.telephoneNumber = telephoneNumber;
+		this.adress = adress;
 	}
 	
 	public String getAdress() {
 		return adress;
-	}
-	
-	public void setAdress(String adress) {
-		this.adress = adress;
 	}
 }

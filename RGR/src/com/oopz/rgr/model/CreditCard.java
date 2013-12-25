@@ -1,3 +1,4 @@
+package com.oopz.rgr.model;
 
 public class CreditCard {
 	private double credit;
