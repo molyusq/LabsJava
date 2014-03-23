@@ -18,4 +18,8 @@ public abstract class MeasurementsHolderDAOFile implements
 	public File getFile() {
 		return file;
 	}
+	
+	public boolean remove() {
+		return file.delete();
+	}
 }
